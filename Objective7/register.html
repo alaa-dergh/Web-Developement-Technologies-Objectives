@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription - ESI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Inscription</h2>
+        <form action="register.php" method="POST">
+            <label>Nom</label>
+            <input type="text" name="name" required>
+
+            <label>Email ESI</label>
+            <input type="email" name="email" placeholder="nom@esi.dz" required>
+
+            <label>Mot de passe</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">S'inscrire</button>
+        </form>
+
+        <div class="link">
+            Déjà inscrit ? <a href="login.html">Se connecter</a>
+        </div>
+    </div>
+</body>
+
+</html>

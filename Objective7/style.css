@@ -1,0 +1,722 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --primary: #1f4e79;
+    --primary-dark: #14344f;
+    --accent: #c0392b;
+    --light-gray: #d3d3d3;
+    --stripe: #e8f1fa;
+    --text: #222;
+    --bg: #f7f7f7;
+}
+
+body {
+    padding: 0 0 40px;
+    color: var(--text);
+    background-color: var(--bg);
+    line-height: 1.5;
+}
+
+
+/* ---------- Navbar ---------- */
+.navbar {
+    background-color: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu a {
+    display: block;
+    padding: 14px 22px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Dropdown submenus */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    list-style: none;
+    background-color: var(--primary-dark);
+    z-index: 10;
+}
+
+.dropdownMenu:hover .submenu {
+    display: block;
+}
+
+.submenu a {
+    font-weight: normal;
+}
+
+/* Logout button (right side of the navbar) */
+.menu .logout {
+    margin-left: auto;
+}
+
+.menu .logout a {
+    margin: 8px 12px;
+    padding: 6px 18px;
+    background: var(--accent);
+    border-radius: 4px;
+}
+
+.menu .logout a:hover {
+    background: #922b21;
+}
+
+
+/* ---------- Header ---------- */
+header {
+    text-align: center;
+    padding: 30px 20px 10px;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-style: italic;
+    font-family: "Papyrus", fantasy;
+    color: var(--primary);
+    margin: 0 0 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.banner {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ---------- Project form ---------- */
+.formInfo {
+    width: 90%;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background-color: #fff;
+    border: 2px solid var(--primary);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.formInfo label {
+    display: inline-block;
+    margin: 18px 0 6px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.formInfo textarea,
+.formInfo select {
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    background-color: #fafafa;
+    resize: vertical;
+}
+
+.formInfo textarea:focus,
+.formInfo select:focus,
+.formInfo input[type="file"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(31, 78, 121, 0.5);
+    background-color: #fff;
+}
+
+/* Remove the <br> spacing */
+.formInfo br {
+    display: none;
+}
+
+/* Upload section */
+.uploadDocuments {
+    margin-top: 25px;
+    padding: 15px 20px 20px;
+    border: 2px dashed var(--primary);
+    border-radius: 8px;
+    background-color: var(--stripe);
+}
+
+.uploadDocuments label {
+    display: block;
+}
+
+.uploadDocuments input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-gray);
+}
+
+.buttons button {
+    width: auto;
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #6c757d;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.buttons button[type="submit"] {
+    background-color: var(--primary);
+}
+
+.buttons button:hover {
+    opacity: 0.85;
+}
+
+
+/* ---------- Members table ---------- */
+.projectMembersTable {
+    width: 90%;
+    max-width: 700px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    border: 3px dotted var(--primary);
+    background-color: #fff;
+}
+
+.projectMembersTable th,
+.projectMembersTable td {
+    padding: 12px 16px;
+    text-align: left;
+    border: 3px dotted var(--primary);
+}
+
+.projectMembersTable tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.projectMembersTable tr:nth-child(even) {
+    background-color: var(--stripe);
+}
+
+/* Selector 1: first row -> light gray */
+.projectMembersTable tr:first-child {
+    background-color: var(--light-gray);
+    font-weight: bold;
+}
+
+/* Selector 2: first column -> light gray */
+.projectMembersTable th:first-child,
+.projectMembersTable td:first-child {
+    background-color: var(--light-gray);
+    font-weight: bold;
+}
+
+/* clickable headers */
+.projectMembersTable th {
+    cursor: pointer;
+    user-select: none;
+}
+
+
+/* ---------- Email link ---------- */
+a[href^="mailto:"] {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: var(--accent);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+a[href^="mailto:"]:hover {
+    background-color: #922b21;
+}
+
+
+/* ---------- Slideshow ---------- */
+.slideShow {
+    margin-right: 5%;
+    margin-left: 5%;
+    background-color: black;
+    overflow: hidden;
+}
+
+.slideTrack {
+    display: flex;
+    width: 500%;
+    animation: slide 10s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    will-change: transform;
+}
+
+.slideTrack img {
+    width: 20%;
+    flex-shrink: 0;
+    height: 500px;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0%, 10%   { transform: translateX(-80%); }
+    25%, 35%  { transform: translateX(-60%); }
+    50%, 60%  { transform: translateX(-40%); }
+    75%, 85%  { transform: translateX(-20%); }
+    100%      { transform: translateX(0%); }
+}
+
+.slideShow:hover .slideTrack {
+    animation-play-state: paused;
+}
+
+
+/* ---------- Add member form ---------- */
+.addLineForm {
+    width: 90%;
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background-color: #fff;
+    border: 2px dashed var(--primary);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.addLineForm label {
+    display: inline-block;
+    margin: 18px 0 6px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+#addLineButton {
+    width: auto;
+    margin-top: 20px;
+    border: 2px solid var(--primary-dark);
+    color: var(--stripe);
+    background-color: var(--primary);
+    border-radius: 6px;
+    padding: 10px 24px;
+}
+
+.buttonAddSection {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* ---------- Search bar ---------- */
+.searchBar {
+    display: flex;
+    gap: 10px;
+    width: 90%;
+    max-width: 700px;
+    margin: 30px auto 0;
+}
+
+.searchBar input {
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    background-color: #fafafa;
+}
+
+.searchBar input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(31, 78, 121, 0.5);
+    background-color: #fff;
+}
+
+.searchBar + .projectMembersTable {
+    margin-top: 10px;
+}
+
+
+/* ---------- Login / register / project card ---------- */
+.container {
+    width: 350px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 25px;
+    border-top: 5px solid var(--primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container.wide {
+    width: 520px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.container h2 {
+    color: var(--primary);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #444;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.container input:focus,
+.container textarea:focus,
+.container select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 5px rgba(31, 78, 121, 0.4);
+}
+
+.container textarea {
+    resize: vertical;
+    font-family: inherit;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #2c7be5;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1a68d1;
+}
+
+.container button {
+    background: var(--primary);
+    font-weight: bold;
+}
+
+.container button:hover {
+    background: var(--primary-dark);
+}
+
+.link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.link a {
+    color: #2c7be5;
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+/* Messages */
+.msg {
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: red;
+    background: #fdecea;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+}
+
+.msg.success {
+    color: green;
+    background: #e8f6ec;
+    border-color: #b7e1c1;
+}
+
+
+/* ---------- Admin: top bar ---------- */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: var(--primary);
+    color: #fff;
+}
+
+.topbar h2 {
+    margin: 0;
+    color: #fff;
+}
+
+.topLinks {
+    display: flex;
+    gap: 10px;
+}
+
+.topbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    background: none;
+    border-radius: 4px;
+}
+
+.topbar a:hover {
+    background: var(--primary-dark);
+}
+
+.topbar a[href="logout.php"] {
+    background: var(--accent);
+}
+
+.topbar a[href="logout.php"]:hover {
+    background: #922b21;
+}
+
+.subbar {
+    width: 95%;
+    margin: 20px auto 0;
+    font-size: 14px;
+}
+
+.subbar a {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+
+/* ---------- Admin: tables ---------- */
+.tableWrap {
+    width: 95%;
+    margin: 20px auto 30px;
+    overflow-x: auto;
+}
+
+.adminTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.adminTable th {
+    background: var(--primary);
+    color: #fff;
+    text-align: left;
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.adminTable td {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    vertical-align: top;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.adminTable tr:nth-child(even) td {
+    background: var(--stripe);
+}
+
+.adminTable tr:hover td {
+    background: #d6e6f5;
+}
+
+/* date column on one line, project column not too narrow */
+.adminTable td:nth-child(8) {
+    white-space: nowrap;
+}
+
+.adminTable td:nth-child(4) {
+    min-width: 180px;
+}
+
+
+/* ---------- Admin: badges ---------- */
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #fff;
+    background: #6c757d;
+    border-radius: 12px;
+}
+
+.badge.submitted { background: #6c757d; }
+.badge.reviewed  { background: #e67e22; }
+.badge.rejected  { background: #c0392b; }
+.badge.accepted  { background: #27ae60; }
+
+
+/* ---------- Admin: action buttons ---------- */
+.actions {
+    white-space: nowrap;
+}
+
+.actions form {
+    display: inline;
+}
+
+.btnSmall {
+    display: inline-block;
+    width: auto;
+    padding: 6px 12px;
+    margin: 0 2px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #fff;
+    background: var(--primary);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btnSmall:hover      { background: var(--primary-dark); }
+.btnSmall.gray       { background: #6c757d; }
+.btnSmall.gray:hover { background: #545b62; }
+.btnSmall.red        { background: var(--accent); }
+.btnSmall.red:hover  { background: #922b21; }
+
+
+/* ---------- Admin: inline remarks ---------- */
+.remarkForm {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 220px;
+}
+
+.remarkForm textarea {
+    margin-bottom: 0;
+    padding: 6px 8px;
+    font-size: 0.85rem;
+    resize: vertical;
+    min-height: 55px;
+}
+
+.remarkForm .btnSmall {
+    align-self: flex-end;
+    margin: 0;
+    padding: 5px 14px;
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .slideTrack img {
+        height: 250px;
+    }
+
+    .submenu a {
+        padding-left: 20px;
+    }
+
+    .formInfo {
+        padding: 15px;
+    }
+
+    .projectMembersTable th,
+    .projectMembersTable td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.7rem;
+    }
+
+    .slideTrack img {
+        height: 180px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+
+    .searchBar {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 92%;
+        margin: 40px auto;
+    }
+
+    .topbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
