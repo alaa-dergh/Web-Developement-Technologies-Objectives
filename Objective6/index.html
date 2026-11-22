@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>International Cooperation Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    
+
+
+    <nav class="navbar">
+        <ul class="menu">
+
+            <li><a href="#home">Home</a></li>
+
+            <li class="dropdownMenu">
+                <a href="#calls">Calls</a>
+                <ul class="submenu">
+                    <li><a href="#horizons">Horizons</a></li>
+                    <li><a href="#erasmus">Erasmus</a></li>
+                    <li><a href="#prima">Prima</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdownMenu">
+                <a href="#project">Project</a>
+                <ul class="submenu">
+                    <li><a href="#horizon">Horizon</a></li>
+                    <li><a href="#cbhe">CBHE</a></li>
+                    <li><a href="#pnr">PNR</a></li>
+                    <li><a href="#cnepru">CNEPRU</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdownMenu">
+                <a href="#mobility">Mobility</a>
+                <ul class="submenu">
+                    <li><a href="#national">National</a></li>
+                    <li><a href="#erasmus-mobility">Erasmus</a></li>
+                    <li><a href="#exchange">Exchange</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+    </nav>
+
+    <header>
+        <h1 class="title">International Cooperation Projects</h1>
+        <div class="slideShow">
+            <div class="slideTrack">
+
+                <img src="./assets/uniIMG.webp" alt="University Image">
+                <img src="./assets/esi.audito.jpg" alt="esi Image">
+                <img src="./assets/read.jpg" alt="Read Image">
+                <img src="./assets/focus.jpg" alt="Focus Image">
+                <img src="./assets/uniIMG.webp" alt="University Image">
+                
+            </div>
+
+
+        </div>
+    </header>
+    
+    <form class="formInfo">
+        <label for="informations">Informations about the project:</label>
+        <br>
+        <textarea id="informations" name="informations" rows="4" cols="50" placeholder="Enter project information here..."></textarea>
+
+        <br>
+
+        <label for="program">Program</label>
+        <select name="program" id="program">
+            <option value="horizon">Horizon</option>
+            <option value="cbhe">CBHE</option>
+            <option value="pnr">PNR</option>
+            <option value="cnepru">CNEPRU</option>
+        </select>
+
+        <br>
+
+        <label for="call">Call</label>
+        <select name="call" id="call">
+            <option value="horizons">Horizons</option>
+            <option value="erasmus">Erasmus</option>
+            <option value="prima">Prima</option>
+        </select>
+
+        <br>
+
+        <label for="partners">Partners</label>
+        <br>
+        <textarea id="partners" name="partners" rows="4" cols="50" placeholder="Enter partners informations here..."></textarea>
+        
+        <br>
+
+        <label for="needs">Accompanying needs</label>
+        <br>
+        <textarea id="needs" name="needs" rows="4" cols="50" placeholder="Enter accompanying needs here..."></textarea>
+
+        <br>
+
+        <div class="uploadDocuments">
+            
+            <label for="draft">Project Draft (PDF or Word):</label>
+               <input
+                type="file"
+                id="draft"
+                name="draft"
+                accept=".pdf,.doc,.docx"
+            >
+            <br>
+
+            <label for="additionalDocuments">Additional Documents (PDF or Word):</label>
+            <input
+                type="file"
+                id="additionalDocuments"
+                name="additionalDocuments"
+                accept=".pdf,.doc,.docx"
+            >
+            
+
+        </div>
+
+        <div class="buttons">
+            <button>Save Draft</button>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+
+    <table class="projectMembersTable" border>
+        <tr>
+            <th>Project Members</th>
+            <th>Position</th>
+            <th>Role</th>
+        </tr>
+
+        <tr>
+            <td>Elias mouradi</td>
+            <td rowspan="2">Researcher</td>
+            <td>Lead Investigator</td>
+        </tr>
+
+        <tr>
+            <td>Mohammed rafik</td>
+            <td>Co-Investigator</td>
+        </tr>
+
+
+    </table>
+    <form class="addLineForm">
+        <label >New member's name :</label>
+        <input type="text" id="nameMember" required />
+        <br>
+
+        <label >New member's position :</label>
+        <input type="text" id="position" required />
+        <br>
+
+        <label >New member's role :</label>
+        <input type="text" id="role" required />
+
+        <br>
+
+        <div class="buttonAddSection">
+            <button id="addLineButton" type="button">Add Member</button>
+        </div>
+    </form>
+
+  <a href="mailto:na_derghoum@esi.dz">Envoyer un email</a>
+</body>
+</html>
